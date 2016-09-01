@@ -14,12 +14,15 @@ def apply_op(op, a, b):
 
 # This could also be a nested function inside of calc_as_you_go.
 # We avoided that, to avoid introducing nested functions in the Scheme translation this early in the course.
-def calc_as_you_go_helper(arg1, token):
+def calc_as_you_go_helper(number_leading, token):
     """Helper function for calc_as_you_go."""
     if token:
-        return calc_as_you_go_helper(apply_op(token[0], arg1, token[1]), token[2:])
+        operation = token[0]
+        number_following = token[1]
+        rest_of_token = token[2:]
+        return calc_as_you_go_helper(apply_op(operation, number_leading, number_following), rest_of_token)
     else:
-        return arg1
+        return number_leading
 
 def calc_as_you_go(token):
     """Infix as-you-go calculator.
