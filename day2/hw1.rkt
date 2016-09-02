@@ -15,16 +15,16 @@
 
 (display (square 2)) (newline)  ;; -> 4
 
-;;; 2.  WRITE is-right-triangle:  given three numbers, returns true iff the third
-;;;     could be the hypotenuse of a right triangle with the specified three side lengths
-;;;     Hint:  use = to compare numeric values
-;
-;(define (is-right-triangle)
-;  your-code-here)
-;
-;(display (is-right-triangle 3 4 5)) (newline)  ;; -> #t
-;(display (is-right-triangle 4 5 6)) (newline)  ;; -> #f
-;
+;; 2.  WRITE is-right-triangle:  given three numbers, returns true iff the third
+;;     could be the hypotenuse of a right triangle with the specified three side lengths
+;;     Hint:  use = to compare numeric values
+
+(define (is-right-triangle a b c)
+  (= (+ (square a) (square b)) (square c)))
+
+(display (is-right-triangle 3 4 5)) (newline)  ;; -> #t
+(display (is-right-triangle 4 5 6)) (newline)  ;; -> #f
+
 ;;; 3.  WRITE FACTORIAL:  given n, returns n!
 ;;;     Hint:  recursion is your friend
 ;(define (fact n)
