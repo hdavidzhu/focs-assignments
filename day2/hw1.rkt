@@ -67,9 +67,18 @@
 (display (sum '(1 2 3 4))) (newline) ;; -> 10
 (display (sum '(1 20 300))) (newline) ;; -> 321
 
-;;; 6.  WRITE a procedure that takes a list of numbers and returns the largest one.
-;;;     While there are solutions using scheme's built-in max, we were actually hoping you'd do something else...
-;(define (my-max lst)
-;  your-code-here)
-;
-;(display (my-max '(1 10 2 20 3))) (newline) ;; -> 20
+;; 6.  WRITE a procedure that takes a list of numbers and returns the largest one.
+;;     While there are solutions using scheme's built-in max, we were actually hoping you'd do something else...
+(define (my-max-helper currentMax lst)
+  (cond ((null? lst)
+         currentMax)
+        ((> (list-ref lst 0) currentMax)
+         (my-max-helper (list-ref lst 0) (list-tail lst 1)))
+        (else
+         (my-max-helper currentMax (list-tail lst 1)))))
+
+(define (my-max lst)
+  (my-max-helper (list-ref lst 0) (list-tail lst 1)))
+
+(display "max testing: ") (newline)
+(display (my-max '(1 10 2 20 3))) (newline) ;; -> 20
