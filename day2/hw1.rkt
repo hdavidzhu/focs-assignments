@@ -3,7 +3,7 @@
 ;;; Student Name: David Zhu
 ;;;
 ;;; Check one:
-;;; [ ] I completed this assignment without assistance or external resources.
+;;; [X] I completed this assignment without assistance or external resources.
 ;;; [ ] I completed this assignment with assistance from ___
 ;;;     and/or using these external resources: ___
 
@@ -46,7 +46,7 @@
    (cond ((eq? n 0) 0)
          ((eq? n 1) 1)
          (else (+ (fib (- n 1)) (fib (- n 2))))))
- 
+
 (display "fib testing: ") (newline)
 (display (fib 1)) (newline) ;; -> 1
 (display (fib 2)) (newline) ;; -> 1
