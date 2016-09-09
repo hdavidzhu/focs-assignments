@@ -10,11 +10,20 @@
 ;;; 1.  Create a calculator that takes one argument: a list that represents an expression.
 
 (define (calculate x)
-  (cond [(number? x) x]
+  (cond [(not (list? x)) x]
         [(eq? (first x) 'ADD) (+ (calculate (first (rest x))) (calculate (second (rest x))))]
         [(eq? (first x) 'SUB) (- (calculate (first (rest x))) (calculate (second (rest x))))]
         [(eq? (first x) 'MUL) (* (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'DIV) (/ (calculate (first (rest x))) (calculate (second (rest x))))]))
+        [(eq? (first x) 'DIV) (/ (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'GT) (> (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'LT) (< (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'GE) (>= (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'LE) (<= (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'EQ) (= (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'NEQ) (not (calculate (cons 'EQ (rest x))))]
+        [(eq? (first x) 'ANDD) (and (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'ORR) (or (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'NOTT) (not (calculate (first (rest x))))]))
 
 (calculate '(ADD 3 4)) ;; --> 7
 (calculate '(ADD 3 (MUL 2 4))) ;; --> 11
@@ -29,12 +38,15 @@
 ;; Note that each of these takes numeric arguments (or expressions that evaluate to produce numeric values),
 ;; but returns a boolean.  We suggest operators `GT`, `LT`, `GE`, `LE`, `EQ`, `NEQ`.
 
-	(calculate '(GT (ADD 3 4) (MUL 5 6))) ;; --> #f
-	(calculate '(LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6))))) ;; --> #t
+(calculate '(GT (ADD 3 4) (MUL 5 6))) ;; --> #f
+(calculate '(LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6))))) ;; --> #t
+(calculate '(NEQ 1 2)) ;; --> #t
 
-;;; 4. Add boolean operations ANND, ORR, NOTT
+;;; 4. Add boolean operations ANDD, ORR, NOTT
 
-(calculate '(AND (GT (ADD 3 4) (MUL 5 6)) (LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6)))))) ;; --> #f
+(calculate '(ANDD (GT (ADD 3 4) (MUL 5 6)) (LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6)))))) ;; --> #f
+(calculate '(ORR (GT (ADD 3 4) (MUL 5 6)) (LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6)))))) ;; --> #t
+(calculate '(NOTT (ANDD #f #t))) ;; -> #t
 
 ;;; 5. Add IPH
 
