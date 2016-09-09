@@ -23,7 +23,8 @@
         [(eq? (first x) 'NEQ) (not (calculate (cons 'EQ (rest x))))]
         [(eq? (first x) 'ANDD) (and (calculate (first (rest x))) (calculate (second (rest x))))]
         [(eq? (first x) 'ORR) (or (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'NOTT) (not (calculate (first (rest x))))]))
+        [(eq? (first x) 'NOTT) (not (calculate (first (rest x))))]
+        [(eq? (first x) 'IPH) (if (calculate (first (rest x))) (calculate (second (rest x))) (calculate (third (rest x))))]))
 
 (calculate '(ADD 3 4)) ;; --> 7
 (calculate '(ADD 3 (MUL 2 4))) ;; --> 11
