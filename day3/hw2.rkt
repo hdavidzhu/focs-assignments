@@ -10,9 +10,15 @@
 ;;; 1.  Create a calculator that takes one argument: a list that represents an expression.
 
 (define (calculate x)
-  your-code-here)
+  (cond [(number? x) x]
+        [(eq? (first x) 'ADD) (+ (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'SUB) (- (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'MUL) (* (calculate (first (rest x))) (calculate (second (rest x))))]
+        [(eq? (first x) 'DIV) (/ (calculate (first (rest x))) (calculate (second (rest x))))]))
 
 (calculate '(ADD 3 4)) ;; --> 7
+(calculate '(ADD 3 (MUL 2 4))) ;; --> 11
+(calculate '(ADD (DIV 12 3) (MUL 2 4))) ;; --> 12
 
 ;;; 2. Expand the calculator's operation to allow for arguments that are themselves well-formed arithmetic expressions.
 
@@ -28,7 +34,7 @@
 
 ;;; 4. Add boolean operations ANND, ORR, NOTT
 
-(calculate '(AND (GT (ADD 3 4) (MUL 5 6))) (LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6)))))) ;; --> #f
+(calculate '(AND (GT (ADD 3 4) (MUL 5 6)) (LE (ADD 3 (MUL 4 5)) (SUB 0 (SUB (ADD 3 4) (MUL 5 6)))))) ;; --> #f
 
 ;;; 5. Add IPH
 
