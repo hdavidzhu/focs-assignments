@@ -3,28 +3,35 @@
 ;;; Student Name: Frankly Olin [change to your name]
 ;;;
 ;;; Check one:
-;;; [X] I completed this assignment without assistance or external resources.
-;;; [ ] I completed this assignment with assistance from ___
+;;; [ ] I completed this assignment without assistance or external resources.
+;;; [X] I completed this assignment with assistance from Sophie Li
 ;;;     and/or using these external resources: ___
 
 ;;; 1.  Create a calculator that takes one argument: a list that represents an expression.
 
 (define (calculate x)
-  (cond [(not (list? x)) x]
-        [(eq? (first x) 'ADD) (+ (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'SUB) (- (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'MUL) (* (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'DIV) (/ (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'GT) (> (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'LT) (< (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'GE) (>= (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'LE) (<= (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'EQ) (= (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'NEQ) (not (calculate (cons 'EQ (rest x))))]
-        [(eq? (first x) 'ANDD) (and (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'ORR) (or (calculate (first (rest x))) (calculate (second (rest x))))]
-        [(eq? (first x) 'NOTT) (not (calculate (first (rest x))))]
-        [(eq? (first x) 'IPH) (if (calculate (first (rest x))) (calculate (second (rest x))) (calculate (third (rest x))))]))
+  (match x
+    [(list operation if-expression then-expression else-expression)
+     (match operation
+       ['IPH (if (calculate if-expression) (calculate then-expression) (calculate else-expression))])]
+    [(list operation left right)
+     (match operation
+       ['ADD (+ (calculate left) (calculate right))]
+       ['SUB (- (calculate left) (calculate right))]
+       ['MUL (* (calculate left) (calculate right))]
+       ['DIV (/ (calculate left) (calculate right))]
+       ['GT (> (calculate left) (calculate right))]
+       ['LT (< (calculate left) (calculate right))]
+       ['GE (>= (calculate left) (calculate right))]
+       ['LE (<= (calculate left) (calculate right))]
+       ['EQ (= (calculate left) (calculate right))]
+       ['NEQ (not (= (calculate left) (calculate right)))]
+       ['ANDD (and (calculate left) (calculate right))]
+       ['ORR (or (calculate left) (calculate right))])]
+    [(list operation operand)
+     (match operation
+       ['NOTT (not operand)])]
+    [x x]))
 
 (calculate '(ADD 3 4)) ;; --> 7
 (calculate '(ADD 3 (MUL 2 4))) ;; --> 11
