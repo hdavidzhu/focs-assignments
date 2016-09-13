@@ -17,9 +17,24 @@
 ;;
 ;; If the key is not found in the list, `assq` returns `#f`.
 
+(define sample-assn-list
+  '((a 1)
+    (b 2)
+    (c 3)))
 
+(define (my-assq input-key assn-list)
+  (cond
+    [(null? assn-list) #f]
+    [(eq? input-key (first (first assn-list))) (first assn-list)]
+    [else (my-assq input-key (rest assn-list))]))
 
-
+(display "my-assq:")
+(newline)
+(my-assq 'c sample-assn-list) ; -> '(c 3)
+(my-assq 'b sample-assn-list) ; -> '(b 2)
+(my-assq 'a sample-assn-list) ; -> '(a 1)
+(my-assq 'd sample-assn-list) ; -> #f
+(newline)
 
 ;;;;;;;;;;;
 ;; 2. lookup-list
