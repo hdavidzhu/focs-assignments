@@ -192,6 +192,7 @@
 ;; This is a fancier version of the cond in calculate-2.  It uses the variable-number-of-arguments
 ;; apply-operator from calculate-4 and a fancy set of IPH-related functions that are included below.
 
+(provide calculate-5)
 (define (calculate-5 expr)
   (cond [(number? expr) expr]   ;; these first three cases are sometimes called
         [(boolean? expr) expr]  ;; self-evaluating (because they are their own
