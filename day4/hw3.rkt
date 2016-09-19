@@ -44,6 +44,7 @@
 ;; Add the `lookup-list` argument to your hw2 evaluator (or ours, from the solution set).
 ;; `(evaluate 'foo lookup-list)` should return whatever `'foo` is associated with in `lookup-list`.
 
+(provide calculate)
 (define (calculate x lookup-list)
   (match x
     [(list operation if-expression then-expression else-expression)
@@ -67,7 +68,9 @@
      (match operation
        ['NOTT (not (calculate operand lookup-list))])]
     [x (if (assq x lookup-list)
-           (second (assq x lookup-list))
+           (calculate (second (assq x lookup-list)) lookup-list)
            x)]))
 
 (calculate '(IPH (GT z 0) z (SUB 0 z)) '((x 3) (y 2) (z -5))) ; -> 5
+(calculate '(IPH (GT z 0) z (SUB 0 z)) '((x 3) (y 2) (z (ADD -1 -2)))) ; -> 5
+; (calculate 'x '((x 4)))
