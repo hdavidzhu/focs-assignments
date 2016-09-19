@@ -1,10 +1,10 @@
 #lang racket
 
-;;; Student Name: Frankly Olin [change to your name]
+;;; Student Name: David Zhu
 ;;;
 ;;; Check one:
 ;;; [ ] I completed this assignment without assistance or external resources.
-;;; [ ] I completed this assignment with assistance from ___
+;;; [X] I completed this assignment with assistance from Anne
 ;;;     and/or using these external resources: ___
 
 ; 0. Require existing code from the last HW assignment
