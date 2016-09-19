@@ -9,8 +9,8 @@
 
 ; 0. Require existing code from the last HW assignment
 
-(require (only-in "../day3/hw2-solns.rkt"
-                  [calculate-5 calculate]))
+(require (only-in "../day4/hw3.rkt"
+                  [calculate calculate]))
 
 ; (define calculate calculate-5)
 
@@ -18,10 +18,24 @@
 
 (define (run-repl)
   (display "welcome to my REPL. Type some scheme-ish.")
-  (repl))
+  (repl empty))
 
-(define (repl)
+(define (repl lookup-list)
   (display "> ")
-  (display (calculate (read)))
-  (newline)
-  (repl))
+  (match (read)
+    [(list 'DEFINE expr ...) (repl (add-to-env (DEFINE (first expr) (second expr)) lookup-list))]
+    [read-input
+     (display (calculate read-input lookup-list))
+     (newline)
+     (repl lookup-list)]))
+
+; 2. DEFINE
+
+(define (DEFINE? input-expression)
+  (if (eq? (first input-expression) 'DEFINE) #t #f))
+
+(define (DEFINE input-var input-association)
+  (list input-var input-association))
+
+(define (add-to-env association-pair lookup-list)
+  (cons association-pair lookup-list))
