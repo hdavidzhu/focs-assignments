@@ -10,7 +10,7 @@ Check one:
 
 a. Not regular.
 
-![1a](1a.jpg)
+![1a](assets/1a.jpg)
 
 b. Regular.
 
@@ -22,12 +22,44 @@ b. Regular.
 
 c. Not regular.
 
-![1c](1c.jpg)
+![1c](assets/1c.jpg)
 
 ### 2. Playing the pumping game
 
-a.
+a. Problem 1: http://weitz.de/pump/?ex=0
+![](assets/pump_0.png)
 
-b.
+```python
+L = {a, b}
+
+# It also claims it can build a finite automaton accepting L using 16 states.
+
+# My choice:
+w = (a^16)*(b^17)
+
+# Computer's loop choice:
+aaa[aaaa]aaaaaaaaabbbbbbbbbbbbbbbbbb
+
+# My pumped string not in L:
+w2 = (a^20)*(b^17)
+```
+
+b. Problem 2: http://weitz.de/pump/?ex=1
+![](assets/pump_1.png)
+
+```python
+L = {a, b}
+
+# It also claims it can build a finite automaton accepting L using 14 states.
+
+# My choice:
+w = (a^14)*(b^14)
+
+# Computer's loop choice:
+a[aaaaaaa]aaaaaabbbbbbbbbbbbbb
+
+# My pumped string not in L:
+w2 = (a^28)*(b^14)
+```
 
 ### 3. Create a PDA
