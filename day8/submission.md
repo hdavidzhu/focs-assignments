@@ -27,6 +27,7 @@ c. Not regular.
 ### 2. Playing the pumping game
 
 a. Problem 1: http://weitz.de/pump/?ex=0
+
 ![](assets/pump_0.png)
 
 ```python
@@ -45,6 +46,7 @@ w2 = (a^20)*(b^17)
 ```
 
 b. Problem 2: http://weitz.de/pump/?ex=1
+
 ![](assets/pump_1.png)
 
 ```python
