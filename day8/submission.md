@@ -65,3 +65,5 @@ w2 = (a^28)*(b^14)
 ```
 
 ### 3. Create a PDA
+
+Refer to `3.jff`. I chose Problem 1C.
