@@ -10,20 +10,36 @@ Check one:
 
 ### a.
 ```python
-S -> | ε
+L = {0 , 1}
+S -> 0S0 | 1S1 | ε
 
+# Derivation
+S -> 0S0 -> 01S10 -> 010S010 -> 010010
 ```
 
 ### b.
 ```python
+L = {a, b, c}
+S -> aSbC | ε
+C -> cC | ε
 ```
 
 ### c.
 ```python
+L = {a, b, c}
+S -> aAbSc | ε
+A -> aA | ε
 ```
 
 ### d.
 ```python
+L = {a, b}
+
+# Grammar 1.
+S -> abS | ε
+
+# Grammar 2.
+S -> Sab | ε
 ```
 
 ## 4. Ambiguous grammars
