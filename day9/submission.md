@@ -11,6 +11,9 @@ Check one:
 ### a.
 ```R
 L = {0 , 1}
+V = {S}
+S = S
+
 S -> 0S0 | 1S1 | ε
 
 # Derivation
@@ -20,6 +23,9 @@ S -> 0S0 -> 01S10 -> 010S010 -> 010010
 ### b.
 ```R
 L = {a, b, c}
+V = {S, C}
+S = S
+
 S -> aSbC | ε
 C -> cC | ε
 ```
@@ -27,6 +33,9 @@ C -> cC | ε
 ### c.
 ```R
 L = {a, b, c}
+V = {S, A}
+S = S
+
 S -> aAbSc | ε
 A -> aA | ε
 ```
@@ -34,6 +43,8 @@ A -> aA | ε
 ### d.
 ```R
 L = {a, b}
+V = {S}
+S = S
 
 # Grammar 1.
 S -> abS | ε
