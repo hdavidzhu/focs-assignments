@@ -46,6 +46,10 @@ S -> Sab | ε
 
 ### a. Parse trees
 
+Parse tree 1.
+
+Parse tree 2.
+
 ### b. Leftmost derivations
 
 ### c. Rightmost derivations
