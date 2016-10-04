@@ -9,7 +9,7 @@ Check one:
 ## 2. Constructing grammars
 
 ### a.
-```python
+```R
 L = {0 , 1}
 S -> 0S0 | 1S1 | ε
 
@@ -18,21 +18,21 @@ S -> 0S0 -> 01S10 -> 010S010 -> 010010
 ```
 
 ### b.
-```python
+```R
 L = {a, b, c}
 S -> aSbC | ε
 C -> cC | ε
 ```
 
 ### c.
-```python
+```R
 L = {a, b, c}
 S -> aAbSc | ε
 A -> aA | ε
 ```
 
 ### d.
-```python
+```R
 L = {a, b}
 
 # Grammar 1.
@@ -49,7 +49,7 @@ S -> Sab | ε
 ![](assets/4a.png)
 
 ### b. Leftmost derivations
-```python
+```R
 # First option.
 S -> a S
   -> a a S b S
@@ -64,7 +64,7 @@ S -> a S b S
 ```
 
 ### c. Rightmost derivations
-```python
+```R
 # First option.
 S -> a S
   -> a a S b S
@@ -83,7 +83,7 @@ Based on the grammar provided, `b`s can only be produced in the presence of an `
 
 This means that `count(a) - count(b) = difference >= 0`.
 
-```python
+```R
 # Let difference start at 0.
 difference = 0
 
