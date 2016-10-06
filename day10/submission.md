@@ -49,6 +49,7 @@ T -> A    # This can be removed.
 
 # Update #2.
 S -> EPE | TXT | LER | A
+E -> EPE | TXT | LER | A
 
 # Get the left side down.
 F -> EP
@@ -57,6 +58,8 @@ M -> LE
 
 # Final.
 S -> FE | UT | MR | a
+E -> FE | UT | MR | a
+T -> UT | MR | a
 F -> EP
 U -> TX
 M -> LE
