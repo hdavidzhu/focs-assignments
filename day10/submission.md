@@ -68,3 +68,24 @@ X -> x
 L -> (
 R -> )
 ```
+
+### 4.
+
+Part of this language contains the following productions.
+
+```
+T -> (E)
+E -> T
+
+# Which means...
+T -> (T)
+```
+
+This part could also be described as
+```
+L = {a^nb^n}
+```
+
+From prior exercises, we know that this can not be described with a regular language because matching the count of two different letters require something like a stack. In other words, regular languages cannot keep a potentially infinite count. This has been proven with prior pumping lemmas.
+
+### 5.
