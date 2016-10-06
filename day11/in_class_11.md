@@ -8,10 +8,10 @@ Fill in the truth table for _a AND b_
 
 _a_ | _b_ | _a_ AND _b_
 ----|-----|---
- F  |  F  | 
- F  |  T  | 
- T  |  F  | 
- T  |  T  | 
+ F  |  F  |
+ F  |  T  |
+ T  |  F  |
+ T  |  T  |
 
 This truth table is written with the rows in *canonical order*.  Do you know why this order is canonical (i.e. standard)?  [Hint:  If you represent `false` as 0 and `true` as 1, in what order are these rows?]
 
@@ -40,7 +40,7 @@ Do you recognize this function by another name?
 
 Build the truth table for _(NOT a) OR b_.  [_OR_ is true if *at least*` one of its arguments is true.]
 
-_a_ | _b_ | _NOT a_ | _(NOT a) OR b_ 
+_a_ | _b_ | _NOT a_ | _(NOT a) OR b_
 ----|-----|-----|---
  F  |  F  |     |   
  F  |  T  |     |   
@@ -65,7 +65,7 @@ Can you write another expression with the same truth values as _(a AND (NOT b)) 
 
 
 
-## II. Knights and Knaves 
+## II. Knights and Knaves
 
 Knights always tell the truth; knaves always lie.  Everyone on a particular island is either a knight or a knave.
 
@@ -156,8 +156,11 @@ Once when Smullyan was on the island, he encountered two inhabitants.  He asked 
 ### 2. Use rules of inference to prove the following:
 
 Assume:  
+
 _(NOT p) -> (q AND r)_
+
 _p -> s_
+
 _NOT s_
 
 Prove:  _q_
@@ -171,8 +174,11 @@ Prove:  _q_
 ### 3. Use rules of inference to prove the following:
 
 Assume:  
+
 _p AND q_
+
 _p -> NOT (q AND r)_
+
 _s -> r_
 
 Prove:  _NOT s_
@@ -184,8 +190,11 @@ Prove:  _NOT s_
 ### 4. Use rules of inference to prove the following:
 
 Assume:  
+
 _(NOT (p OR q)) -> r_
+
 _NOT p_
+
 _NOT r_
 
 Prove:  _q_
@@ -194,11 +203,3 @@ Prove:  _q_
 
 
 ### 5. Replicate any of the proofs in 2, 3, or 4 using truth tables.
-
-
-
-
-
-
-
-
