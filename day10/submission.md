@@ -125,3 +125,19 @@ S -> NP VP -> DET N VP -> A boy VP -> A boy VP PP -> A boy V NP PP
 
 The NP VP would cause a similar ambiguity as 6a.
 ```
+
+d.
+
+```
+S -> NP VP
+NP -> NP PP
+NP -> DET N | DET A N | N
+VP -> V NP
+VP -> VP PP
+DET -> a | the
+A -> tall | purple
+N -> boy | girl | flowers | binoculars
+V -> touches | sees
+PP -> P NP
+P -> in | from | with
+```
