@@ -89,3 +89,39 @@ L = {a^nb^n}
 From prior exercises, we know that this can not be described with a regular language because matching the count of two different letters require something like a stack. In other words, regular languages cannot keep a potentially infinite count. This has been proven with prior pumping lemmas.
 
 ### 5.
+
+### 6.
+
+a.
+
+```
+# First left most derivation.
+S -> NP VP -> DET N VP -> The girl VP -> The girl VP PP -> The girl V NP PP
+  -> The girl touches NP PP -> The girl touches DET N PP
+  -> The girl touches the boy PP -> The girl touches the boy P NP
+  -> The girl touches the boy with NP -> The girl touches the boy with DET N
+  -> The girl touches the boy with the flower
+
+# Second left most derivation.
+S -> NP VP -> DET N VP -> The girl VP -> The girl V NP -> The girl touches NP
+  -> The girl touches NP PP -> The girl touches DET N PP
+  -> The girl touches the boy PP -> The girl touches the boy P NP
+  -> The girl touches the boy with NP -> The girl touches the boy with DET N
+  -> The girl touches the boy with the flower
+```
+
+b.
+
+From the first derivation, we interpret that the girl uses the flower to touch the boy. From the second derivation, we interpret that the boy has the flower, and the girl touches the boy.
+
+c.
+
+```
+S -> NP VP -> DET N VP -> A boy VP -> A boy VP PP -> A boy V NP PP
+  -> A boy sees NP PP -> A boy sees DET N PP
+  -> A boy sees a flower PP -> A boy sees a flower P NP
+  -> A boy sees a flower with NP -> A boy sees a flower with DET N
+  -> A boy sees a flower with the binoculars
+
+The NP VP would cause a similar ambiguity as 6a.
+```
