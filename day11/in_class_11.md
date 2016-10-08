@@ -157,11 +157,9 @@ Once when Smullyan was on the island, he encountered two inhabitants.  He asked 
 
 Assume:  
 
-_(NOT p) -> (q AND r)_
-
-_p -> s_
-
-_NOT s_
+	_(NOT p) -> (q AND r)_
+	_p -> s_
+	_NOT s_
 
 Prove:  _q_
 
@@ -175,11 +173,9 @@ Prove:  _q_
 
 Assume:  
 
-_p AND q_
-
-_p -> NOT (q AND r)_
-
-_s -> r_
+	_p AND q_
+	_p -> NOT (q AND r)_
+	_s -> r_
 
 Prove:  _NOT s_
 
@@ -189,13 +185,11 @@ Prove:  _NOT s_
 
 ### 4. Use rules of inference to prove the following:
 
-Assume:  
+Assume:
 
-_(NOT (p OR q)) -> r_
-
-_NOT p_
-
-_NOT r_
+	_(NOT (p OR q)) -> r_
+	_NOT p_
+	_NOT r_
 
 Prove:  _q_
 
