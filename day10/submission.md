@@ -90,6 +90,33 @@ From prior exercises, we know that this can not be described with a regular lang
 
 ### 5.
 
+a.
+
+```
+K = {a^n b^n c^n} # From Theorem 1, this language is not context-free.
+
+L_1 = {a^d b^d c^e}
+L_2 = {a^f b^f c^g}
+L = L_1 + L_2 # The intersection of the two languages.
+
+# Let's choose a string that falls in L.
+Q = a^h b^i c^j
+
+# If Q is in L, it must satisfy L_1's constraint.
+# Therefore, h == i
+Q = a^i b^i c^j
+
+# Q must also satisfy L_2's constraint at the same time.
+# Therefore, i == j
+Q = a^i b^i c^i
+```
+
+However, now `Q` must also be a string in `K`, which is not context free.
+
+Therefore, the intersection of `L_1` and `L_2`, both of which are context-free (from prior work/homework), produced a string that is not context free. This is an example of how context free languages are not closed under intersection.
+
+b.
+
 ### 6.
 
 a.
