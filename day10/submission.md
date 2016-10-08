@@ -125,11 +125,33 @@ From the pumping lemma of context-free languages:
 
 If _L_ is a context-free language, then there exists a _p_ (the pumping length) such that for any string _s_ in _L_, where the length of _s_ >= _p_, there exists _u_, _v_, _x_, _y_, _z_, such that
 
-1. _s_ = _uvxyz_ (s can be broken up into 5 parts), where
-1. | _vxy_ | <= _p_
+1. _s_ = _uvxyz_ (_s_ can be broken up into 5 parts)
+2. | _vxy_ | <= _p_
 3. | _vy_ | > 0
 
-and for any _p_ >= 0, _uv^p xy^p z_ is in _L_.
+and for any _i_ >= 0, _uv^i xy^i z_ is in _L_.
+
+Now, let's write the contrapositive.
+
+If the following (lemma) property is true:
+
+For any _p_ (the pumping length), there exists a _s_ in _L_ where the length of _s_ >= _p_, such that for any _u_, _v_, _x_, _y_, _z_ where:
+
+1.  _s_ = _uvxyz_
+2. | _vxy_ | <= _p_
+3. | _vy_ | > 0
+
+There exists _uv^i xy^i z_ not in _L_ where _i_ >= 0.
+
+Then _L_ is not a context-free language.
+
+Ok. let _L_ = _{a^n b^n c^n}_. Let's try to make the inverse of the lemma property valid.
+
+Let _p1_ be a pumping length. Then let
+
+_s1_ = _a a^i b b^i c_
+
+[TODO: Complete.]
 
 ### 6.
 
