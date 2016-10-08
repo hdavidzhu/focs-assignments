@@ -117,6 +117,20 @@ Therefore, the intersection of `L_1` and `L_2`, both of which are context-free (
 
 b.
 
+If _p_, then _q_.
+
+From the contrapositive, if not _q_, then _p_.
+
+From the pumping lemma of context-free languages:
+
+If _L_ is a context-free language, then there exists a _p_ (the pumping length) such that for any string _s_ in _L_, where the length of _s_ >= _p_, there exists _u_, _v_, _x_, _y_, _z_, such that
+
+1. _s_ = _uvxyz_ (s can be broken up into 5 parts), where
+1. | _vxy_ | <= _p_
+3. | _vy_ | > 0
+
+and for any _p_ >= 0, _uv^p xy^p z_ is in _L_.
+
 ### 6.
 
 a.
