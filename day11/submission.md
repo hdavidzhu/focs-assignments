@@ -99,3 +99,16 @@ This is a satisfiable statement.
 | 1 | 1 | 1 | 1         | 0            | 1      | 1      | 0                                                          | 1                | 1            |
 
 This is a (satisfiable) tautology.
+
+### IV. CNF
+
+```
+1. p v (q ^ -(r ^ (s -> t)))              # Given.
+2. p v (q ^ (-r v -(s -> t)))             # 1, De Morgan's
+3. p v (q ^ (-r v -(-s v t)))             # 2, Conditional
+4. p v (q ^ (-r v (s ^ -t)))              # 3, De Morgan's
+5. p v (q ^ -r) v (q ^ s ^ -t)            # 4, Distributive
+6. p v q ^ (-r v (s ^ -t))                # 5, Distributive
+7. p v q ^ (-r v s) ^ (-r v -t)           # 6, Distributive
+8. (p v q) ^ (p v -r v s) ^ (p v -r v -t) # 7, Distributive
+```
