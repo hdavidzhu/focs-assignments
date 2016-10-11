@@ -1,8 +1,8 @@
 ```
 Student Name: David Zhu
 Check one:
-[X] I completed this assignment without assistance or external resources.
-[ ] I completed this assignment with assistance from ___
+[ ] I completed this assignment without assistance or external resources.
+[X] I completed this assignment with assistance from Sophie Li
    and/or using these external resources: ___
 ```
 
@@ -118,3 +118,5 @@ This is a (satisfiable) tautology.
 Looking at Problem IV, we see that the root of the problem is `p v Right`. We can tell that `p v F` is easily satisfiable. (`p v F <-> p` is an identity logical equivalence. `p` itself is obviously satisfiable.) Regardless of what is on the right, Problem IV will be satisfiable thanks to `p`. (short certificate).
 
 Exhaustive enumeration would require `2^5 = 32` lines of considerations.
+
+UPDATE: Thanks to Sophie's help, here's a concrete example. When `p = 1`, thanks to the root `OR`, the expression will evaluate to be `1`. Thus, the expression is satisfiable, thanks to these instances.
