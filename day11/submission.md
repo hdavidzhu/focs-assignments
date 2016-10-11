@@ -112,3 +112,9 @@ This is a (satisfiable) tautology.
 7. p v q ^ (-r v s) ^ (-r v -t)           # 6, Distributive
 8. (p v q) ^ (p v -r v s) ^ (p v -r v -t) # 7, Distributive
 ```
+
+### V.
+
+Looking at Problem IV, we see that the root of the problem is `p v Right`. We can tell that `p v F` is easily satisfiable. (`p v F <-> p` is an identity logical equivalence. `p` itself is obviously satisfiable.) Regardless of what is on the right, Problem IV will be satisfiable thanks to `p`. (short certificate).
+
+Exhaustive enumeration would require `2^5 = 32` lines of considerations.
