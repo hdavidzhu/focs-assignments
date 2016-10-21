@@ -50,11 +50,55 @@ Let n0 = 0
 
 ### I-E
 
+```
+f(n) = 2^n
+g(n) = 3^n
+
+Only based on the definition of this HW, let k = 1, n0 = 1.
+
+2^1 <= 3^1
+2 <= 3  <<<< k and n0 are valid. g(n) would be greater than f(n).
+```
+
 ### I-F
+
+```
+f(n) = 3^n
+g(n) = 2^n
+
+This problem is impossible b/c for any multiple for k, g(n) would always
+accelerate exponentially slower than f(n) when n is large.
+```
 
 ### I-G
 
+```
+f(n) = log_2 (n)
+g(n) = log_10 (n)
+
+f(n) / g(n) = log(10) / log(2), which is a constant number.
+Let k = log(10) / log(2) + 1
+Let n0 = 1
+
+Then, the condition would satisfy.
+[k = log(10) / log(2), n0 = 1]
+```
+
 ### I-H
+
+```
+f(n) = log_10 (n^2)
+g(n) = log_2 (n)
+
+For positive n's
+f(n) = 2 log_10 (n)
+
+In this case, g(n) is already greater than f(n) by a constant. Personally, I'm
+unsure, by our definition, if f(n) and g(n) would 'grow by the same rate then.'
+I'll guess yes?
+
+[k = 1, n0 = 0]
+```
 
 ### II-A
 
