@@ -102,11 +102,23 @@ I'll guess yes?
 
 ### II-A
 
+Both cost 1 unit. An array can be directly referenced by its address, and a linked list is referenced from the first element down.
+
 ### II-B
+
+Reading from array would cost 1 unit (by address). Reading from linked list would cost 7, since you have to trace from the 1st element.
 
 ### II-C
 
+Adding an element to an array could be 1 or n or more, depending on how much memory was allocated to the array in the first place. If we didn't allocate enough, we would have to copy the array to a bigger memory block.
+
+Adding an element to a linked list could cost 1 or n, depending on where we add the element. If you add at the beginning, you can just swap the reference of the linked list in the first node. Anywhere else would require tracing down the list to that position and performing the swap.
+
+The cheapest place to add to an array is at the end. The cheapest place for a linked list is at the beginning.
+
 ### II-D
+
+
 
 ### II-E
 
