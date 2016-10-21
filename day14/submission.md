@@ -110,7 +110,7 @@ Reading from array would cost 1 unit (by address). Reading from linked list woul
 
 ### II-C
 
-Adding an element to an array could be 1 or n or more, depending on how much memory was allocated to the array in the first place. If we didn't allocate enough, we would have to copy the array to a bigger memory block.
+Adding an element to an array could be 1 or n, depending on how much memory was allocated to the array in the first place. If we didn't allocate enough, we would have to copy the array to a bigger memory block.
 
 Adding an element to a linked list could cost 1 or n, depending on where we add the element. If you add at the beginning, you can just swap the reference of the linked list in the first node. Anywhere else would require tracing down the list to that position and performing the swap.
 
@@ -118,8 +118,36 @@ The cheapest place to add to an array is at the end. The cheapest place for a li
 
 ### II-D
 
+Deleting from array would cost n-5 units, since we would need to shift all the elements right of the 5th index left.
 
+Deleting from a linked list would cost 5 units, since we have to traverse to the location. Once we are there, we can just redirect the references to ignore the 5th element.
 
 ### II-E
 
-### II-F
+Both confirmations would take n units (worst case), since we have to check all elements.
+
+### II-F-1
+
+Checking if the element is not in the list would take n units, which is worse than II-E, since we can short circuit / stop early if we find the element first.
+
+### II-F-2
+
+For a linked list, having a reference the previous node is also really useful. This way, adding and removing from the end of a linked list would not be so expensive.
+
+### II-G
+
+For an array, the above still applies, so either 1 or n.
+
+For a linked list, it would cost n units, as we still need to traverse down.
+
+### II-H
+
+Deleting still costs the same for an array.
+
+For a linked list, it would still cost the same.
+
+### II-J
+
+For an array, it would cost log(n), as we can bisect to find our answer. To not find our answer, it would still cost log(n), as the number falls out of range.
+
+For a linked list, it would cost n, since you have to trace through the list. However, the list being sorted, finding that y is not present is cheaper once you find a number that is greater than y.
