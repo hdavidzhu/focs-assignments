@@ -8,6 +8,11 @@ Check one:
 
 ### 1
 
+i   - b
+ii  - a
+iii - d
+iv  - c
+
 ### 2
 
 ### 3
