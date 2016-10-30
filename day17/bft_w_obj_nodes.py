@@ -8,7 +8,7 @@ Date   : 2016-10-27
 License: MIT License
 """
 
-from Queue import Queue
+from queue import Queue
 
 
 class Graph(object):
@@ -41,11 +41,17 @@ class Node(object):
     that can accomodate additional attributes."""
 
     def __init__(self, label):
+        self.parent = None
         self.label = label
 
     def __repr__(self):
         return self.label
 
+    def setParent(self, parent):
+        self.parent = parent
+
+    def getParent(self):
+        return self.parent
 
 def bfs(graph, start):
     remaining_nodes = Queue()
@@ -53,9 +59,11 @@ def bfs(graph, start):
 
     def visit(node):
         print(node)
+        print("parent: " + str(node.getParent()))
         visited.add(node)
         for tail in graph.successors(node):
             if tail not in visited:
+                tail.setParent(node)
                 remaining_nodes.put(tail)
 
     remaining_nodes.put(start)
