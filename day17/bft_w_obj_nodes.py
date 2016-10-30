@@ -8,7 +8,7 @@ Date   : 2016-10-27
 License: MIT License
 """
 
-from queue import Queue
+from Queue import Queue
 
 
 class Graph(object):
@@ -68,7 +68,7 @@ def node_and_edge_labels_to_objects(node_labels, edge_labels):
     """Given a list of node labels, and a list of edges of the form (head_label, tail_label),
     create and return a list of Node instances with those labels, and a corresponding list of
     edges whose head and tail are those instances."""
-    
+
     nodes = [Node(label) for label in node_labels]
     find_node = {node.label: node for node in nodes}.get
     edges = [(find_node(h), find_node(t)) for (h, t) in edge_labels]
