@@ -42,6 +42,7 @@ class Node(object):
 
     def __init__(self, label):
         self.parent = None
+        self.distance = 0
         self.label = label
 
     def __repr__(self):
@@ -59,11 +60,13 @@ def bfs(graph, start):
 
     def visit(node):
         print(node)
-        print("parent: " + str(node.getParent()))
+        print("parent: "   + str(node.getParent()))
+        print("distance: " + str(node.distance))
         visited.add(node)
         for tail in graph.successors(node):
             if tail not in visited:
                 tail.setParent(node)
+                tail.distance = node.distance + 1
                 remaining_nodes.put(tail)
 
     remaining_nodes.put(start)
