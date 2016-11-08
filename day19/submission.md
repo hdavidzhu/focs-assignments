@@ -73,6 +73,15 @@ d. Not sure exactly how to answer this question. If I consider this as a form of
 
 ### 4
 
+a.
+
+b. No. Although it divides the search space by half in every recursive call, it does not combine sub-problems at the end. It's just a divide problem.
+
+c. No. Although the problem gets smaller, we are not caching existing searches. One could argue that disregarding certain zones is like dynamic programming, although I feel this gets into fuzzy territory.
+
+d-e. We could always memoize our initial arguments, or the input, left, and right values into a hashtable (with this tuple as the key). The graph would still look the same as `4a`, although we may have opportunities to terminate early.
+
+(i.e. Reference `4a`, and the subgraphs are the memoized version.)
 
 
 ### 5
