@@ -36,13 +36,30 @@ a.
 
 b.
 
-| Statement                                | Table 1 | x ≧ y | x = y |
-| ---------------------------------------- | ------- | ----- | ----- |
-| ∀x, x. loves(x, x)                       | F       | T     | T     |
-| ∀x, y. loves(x, y) → loves(y, x)         | F       | F     | T     |
+| Statement                                         | Table 1 | x ≧ y | x = y |
+| ------------------------------------------------- | ------- | ----- | ----- |
+| ∀x, x. loves(x, x)                                | F       | T     | T     |
+| ∀x, y. loves(x, y) → loves(y, x)                  | F       | F     | T     |
 | ∀x, y, z. loves(x, y) ∧ loves(y, z) → loves(x, z) | F       | T     | T     |
 
 ### 2
+
+1.
+
+```python
+1. sum(s(0), 0, s(0))       # Axiom 1
+2. sum(s(0), s(0), s(s(0))) # 1, Axiom 2
+```
+
+2.
+
+```python
+1. sum(0, 0, 0)               # Axiom 1
+2. sum(0, s(0), s(0))         # 1, Axiom 2
+3. ∃k ∈ x. sum(0, k, k)       # 1, 2, Extrapolation. <-- This is probably not a real rule.
+4. ∃k ∈ x. sum(0, s(k), s(k)) # 3, Axiom 2
+5. ∀x. sum(0, x, x)           # 1, 3, 4, Induction
+```
 
 ### 3
 
