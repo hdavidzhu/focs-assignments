@@ -73,7 +73,7 @@ d. Not sure exactly how to answer this question. If I consider this as a form of
 
 ### 4
 
-a.
+a. ![](4a.jpg)
 
 b. No. Although it divides the search space by half in every recursive call, it does not combine sub-problems at the end. It's just a divide problem.
 
