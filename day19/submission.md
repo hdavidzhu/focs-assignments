@@ -73,6 +73,12 @@ d. Not sure exactly how to answer this question. If I consider this as a form of
 
 ### 4
 
+
+
 ### 5
 
+Done.
+
 ### 6
+
+Done.
