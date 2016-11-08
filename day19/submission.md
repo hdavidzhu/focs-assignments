@@ -63,6 +63,14 @@ b.
 
 ### 3
 
+a. This method is not recursive.
+
+b. Not really. Divide an conquer is usually division into `log` performance. We still linearly scan through the list.
+
+c. Yes. The max of prior sublists are not re-calculated. Instead, it's cached under `max_so_far`.
+
+d. Not sure exactly how to answer this question. If I consider this as a form of dynamic programming, does the method still need to be memoized?
+
 ### 4
 
 ### 5
